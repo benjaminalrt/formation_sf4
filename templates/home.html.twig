@@ -11,6 +11,8 @@
     <h2>{{ title }}</h2>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, sequi labore ratione totam nam dignissimos?</p>
 
+    <a href=" {{path('hello', {'prenom': 'Bernard', 'age': 15}) }} ">Allez voir hello</a>
+
     {#
     {% if age >= 18%}
         <p>Vous êtes un adulte</p>

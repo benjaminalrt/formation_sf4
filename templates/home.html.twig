@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mon application</title>
+</head>
+<body>
+    <h1>{{ title | upper }}</h1>
+    <h2>{{ title }}</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, sequi labore ratione totam nam dignissimos?</p>
+
+    {#
+    {% if age >= 18%}
+        <p>Vous êtes un adulte</p>
+    {% elseif age >= 12 %}
+        <p>Vous êtes un ado</p>
+    {% else %}
+        <p>Vous êtes un enfant !</p>
+    {% endif %}
+    #}
+
+
+    {% for prenom, age in tableau %}
+        {% if loop.first %}
+            <strong>(itération numéro {{loop.index}}): {{prenom}} a {{age}} ans</p></strong>
+        {% elseif loop.last %}
+            <em>(itération numéro {{loop.index}}): {{prenom}} a {{age}} ans</p></em>
+        {% else %}
+            <p>(itération numéro {{loop.index}}): {{prenom}} a {{age}} ans</p>
+        {% endif %}
+    {% endfor %}
+
+    <ul>
+        {% for compteur in 0..10 %}
+            <li>{{compteur}}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
